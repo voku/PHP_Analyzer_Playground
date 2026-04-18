@@ -23,7 +23,7 @@ type RawFileResult = {
 
 function normalizeIssue(issue: RawIssue): PhpStanIssue {
   return {
-    message: typeof issue.message === "string" ? issue.message : "Unknown PHPStan issue",
+    message: typeof issue.message === "string" ? issue.message : "PHPStan issue message unavailable",
     line: typeof issue.line === "number" && issue.line > 0 ? issue.line : 1,
     ignorable: Boolean(issue.ignorable),
     identifier: typeof issue.identifier === "string" ? issue.identifier : undefined,
