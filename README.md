@@ -1,20 +1,118 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# PHP Analyzer Playground
 
-# Run and deploy your AI Studio app
+Browser-based playground for running PHPStan analysis, previewing PHP-CS-Fixer changes, and iterating on PHP snippets without leaving the editor.
 
-This contains everything you need to run your app locally.
+## Features
 
-View your app in AI Studio: https://ai.studio/apps/fd6067ba-363d-4605-b68f-8797cbee436a
+- Run PHPStan analysis against PHP snippets
+- Preview formatting changes before applying them
+- Upload local `.php` files for quick inspection
+- Switch between bundled examples to explore analyzer behavior
+- Deploy the static frontend to GitHub Pages
 
-## Run Locally
+## Live Site
 
-**Prerequisites:**  Node.js
+- Production: https://voku.github.io/PHP_Analyzer_Playground/
+- Repository: https://github.com/voku/PHP_Analyzer_Playground
 
+## Requirements
+
+- Node.js 20+ (Node.js 22 recommended)
+- npm 10+
+
+## Local Development
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+   ```bash
+   npm ci
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open `http://localhost:3000`.
+
+No local environment variables are required for the default setup.
+
+## Production Build
+
+Create an optimized build:
+
+```bash
+npm run build
+```
+
+Preview the production bundle locally:
+
+```bash
+npm run preview
+```
+
+Type-check the project:
+
+```bash
+npm run lint
+```
+
+## Deployment
+
+The project is configured for GitHub Pages deployment from the `main` branch.
+
+### Automatic deployment
+
+- Workflow file: `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/.github/workflows/deploy.yml`
+- Trigger: pushes to `main` or manual workflow dispatch
+- Build output: `dist/`
+
+### Required GitHub repository settings
+
+1. Open **Settings → Pages**
+2. Set **Source** to **GitHub Actions**
+3. Merge changes to `main`
+
+## Project Structure
+
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/App.tsx` — main playground UI
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/api.ts` — PHPStan and PHP-CS-Fixer API calls
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/examples.ts` — starter snippets
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/index.html` — document metadata, favicon, and social tags
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/vite.config.ts` — Vite configuration and GitHub Pages base path
+- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/public/` — static assets such as the favicon and social preview image
+
+## Key Files Detector Helper Prompt
+
+Use this helper prompt when you want an AI assistant to quickly identify the most relevant files for a change:
+
+```text
+You are reviewing the PHP Analyzer Playground codebase.
+
+Goal:
+- Identify the key files that should be inspected for the requested change.
+
+Output:
+- Group files by purpose
+- Explain why each file matters
+- Call out any likely follow-up files if deployment, metadata, or docs are involved
+
+Focus areas:
+- UI behavior and layout
+- External API integration
+- Static metadata and assets
+- Build and deployment configuration
+- Documentation
+```
+
+## External Services
+
+The frontend currently calls these public endpoints:
+
+- `https://php.moelleken.org/phpstan/analyze`
+- `https://php.moelleken.org/php-cs-fixer/fix`
+
+## Contributing
+
+Contributions are welcome: https://github.com/voku/PHP_Analyzer_Playground

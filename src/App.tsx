@@ -4,7 +4,7 @@ import { php } from "@codemirror/lang-php";
 import { linter, lintGutter, Diagnostic } from "@codemirror/lint";
 import { foldGutter } from "@codemirror/language";
 import ReactDiffViewer from 'react-diff-viewer-continued';
-import { Play, Eraser, Code, AlertCircle, CheckCircle2, Upload, Sun, Moon, ChevronDown, ChevronRight, Check, X } from "lucide-react";
+import { CheckCircle2, Upload, Sun, Moon, ChevronDown, ChevronRight, Check, X, Github } from "lucide-react";
 import { analyzePhpCode, fixPhpCode } from "./api";
 import { examples } from "./examples";
 import { Button } from "./components/Button";
@@ -483,7 +483,19 @@ export default function App() {
 
       <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 px-4 py-3 lg:py-0 lg:h-7 shrink-0 flex flex-col lg:flex-row items-center text-[11px] text-[#6b7280] dark:text-gray-500 justify-between gap-1 lg:gap-0 z-10">
         <div>PHP 8.2 &nbsp; | &nbsp; PHPStan &nbsp; | &nbsp; Strict Mode: Enabled</div>
-        <div>API: php.moelleken.org/phpstan/analyze</div>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <span>API: php.moelleken.org/phpstan/analyze</span>
+          <span aria-hidden="true">&middot;</span>
+          <a
+            href="https://github.com/voku/PHP_Analyzer_Playground"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          >
+            <Github className="w-3.5 h-3.5" />
+            Contribute on GitHub
+          </a>
+        </div>
       </footer>
     </div>
   );

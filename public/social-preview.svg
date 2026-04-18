@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">PHP Analyzer Playground social preview</title>
+  <desc id="desc">Social preview card for the PHP Analyzer Playground project</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="card" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#dbeafe" stop-opacity="0.28" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="url(#card)" stroke="#93c5fd" stroke-opacity="0.25" />
+  <rect x="116" y="116" width="112" height="112" rx="28" fill="#2563eb" />
+  <path d="M154 150h31c20 0 30 10 30 24s-10 24-30 24h-13v26h-18v-74Zm18 37h13c8 0 13-4 13-13s-5-13-13-13h-13v26Z" fill="#fff" />
+  <path d="M220 150h18v74h-18z" fill="#bfdbfe" />
+  <text x="274" y="172" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="4">VOKU / PHP_ANALYZER_PLAYGROUND</text>
+  <text x="116" y="308" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="800">PHP Analyzer Playground</text>
+  <text x="116" y="376" fill="#dbeafe" font-family="Inter, Arial, sans-serif" font-size="32">Run PHPStan checks, review formatting diffs, and iterate on PHP snippets in the browser.</text>
+  <rect x="116" y="430" width="356" height="56" rx="18" fill="#0f172a" stroke="#60a5fa" />
+  <text x="146" y="467" fill="#93c5fd" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="700">Contribute on GitHub</text>
+  <text x="116" y="528" fill="#bfdbfe" font-family="Inter, Arial, sans-serif" font-size="26">https://voku.github.io/PHP_Analyzer_Playground/</text>
+</svg>
