@@ -64,7 +64,7 @@ The project is configured for GitHub Pages deployment from the `main` branch.
 
 ### Automatic deployment
 
-- Workflow file: `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/.github/workflows/deploy.yml`
+- Workflow file: `.github/workflows/deploy.yml`
 - Trigger: pushes to `main` or manual workflow dispatch
 - Build output: `dist/`
 
@@ -76,12 +76,12 @@ The project is configured for GitHub Pages deployment from the `main` branch.
 
 ## Project Structure
 
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/App.tsx` — main playground UI
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/api.ts` — PHPStan and PHP-CS-Fixer API calls
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/src/examples.ts` — starter snippets
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/index.html` — document metadata, favicon, and social tags
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/vite.config.ts` — Vite configuration and GitHub Pages base path
-- `/home/runner/work/PHP_Analyzer_Playground/PHP_Analyzer_Playground/public/` — static assets such as the favicon and social preview image
+- `src/App.tsx` — main playground UI
+- `src/api.ts` — PHPStan and PHP-CS-Fixer API calls
+- `src/examples.ts` — starter snippets
+- `index.html` — document metadata, favicon, and social tags
+- `vite.config.ts` — Vite configuration and GitHub Pages base path
+- `public/` — static assets such as the favicon and social preview image
 
 ## Key Files Detector Helper Prompt
 
