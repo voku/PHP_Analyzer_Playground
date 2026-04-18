@@ -1,0 +1,6 @@
+{
+  "name": "PHP Analyzer App",
+  "description": "An interactive web app to analyze and fix PHP code using PHPStan and PHP-CS-Fixer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
