@@ -240,7 +240,7 @@ export default function App() {
         <div className="flex flex-wrap items-center justify-start lg:justify-end gap-3 w-full lg:w-auto">
           <button 
             onClick={() => setIsDarkMode(!isDarkMode)} 
-            className="p-2 rounded-md text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-400 transition-colors mr-2"
+            className="p-2 rounded-md border border-gray-200 dark:border-gray-700 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-gray-400 transition-colors mr-2"
             title="Toggle theme"
           >
             {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -250,7 +250,7 @@ export default function App() {
               type="checkbox" 
               checked={autoFormat}
               onChange={(e) => setAutoFormat(e.target.checked)}
-              className="w-4 h-4 rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-blue-600 focus:ring-blue-500 cursor-pointer"
+              className="w-4 h-4 rounded border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-blue-600 checked:bg-blue-600 checked:border-blue-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 focus:ring-blue-500 cursor-pointer"
             />
             Auto-format before analysis
           </label>
