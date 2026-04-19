@@ -58,6 +58,12 @@ Type-check the project:
 npm run lint
 ```
 
+Run the unit tests:
+
+```bash
+npm test
+```
+
 ## Deployment
 
 The project is configured for GitHub Pages deployment from the `main` branch.

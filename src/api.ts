@@ -1,3 +1,5 @@
+import {normalizeAnalysisResult} from "./phpstan";
+
 export async function analyzePhpCode(code: string) {
   const params = new URLSearchParams();
   params.append("code", code);
@@ -15,7 +17,7 @@ export async function analyzePhpCode(code: string) {
     throw new Error(data.message || `HTTP Error: ${res.status}`);
   }
 
-  return res.json();
+  return normalizeAnalysisResult(await res.json());
 }
 
 export async function fixPhpCode(code: string) {

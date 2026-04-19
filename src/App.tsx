@@ -8,16 +8,7 @@ import { CheckCircle2, Upload, Sun, Moon, ChevronDown, ChevronRight, Check, X, G
 import { analyzePhpCode, fixPhpCode } from "./api";
 import { examples } from "./examples";
 import { Button } from "./components/Button";
-
-type AnalysisResult = {
-  message?: string;
-  files?: Record<
-    string,
-    {
-      errors?: Array<{ message: string; line: number; ignorable: boolean }>;
-    }
-  >;
-};
+import { AnalysisResult, countAnalysisIssues } from "./phpstan";
 
 const FileResultSection: React.FC<{ filename: string, errors: any[], warnings: any[] }> = ({ filename, errors, warnings }) => {
   const [isExpanded, setIsExpanded] = useState(true);
@@ -418,20 +409,7 @@ export default function App() {
             {results && !error && (
               <div>
                 {(() => {
-                  let totalErrors = 0;
-                  let totalWarnings = 0;
-
-                  if (results.files) {
-                    Object.values(results.files).forEach((fileData: any) => {
-                      fileData.errors?.forEach((err: any) => {
-                        if (err.ignorable) {
-                          totalWarnings++;
-                        } else {
-                          totalErrors++;
-                        }
-                      });
-                    });
-                  }
+                  const {errors: totalErrors, warnings: totalWarnings} = countAnalysisIssues(results);
 
                   return (
                     <>
